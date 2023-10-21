@@ -8,13 +8,16 @@ In this project, you will develop a RESTful web API using AWS that allows users 
 
 ## Project Structure
 
-JITTO-AWS
-├── README.md
-├── module
-│ ├── item
-│ │ ├── jittoController.py
-│ │ ├── jittoLogic.py
-│ │ ├── jittoRouter.py
+```
+JITTO-AWS/
+├── README.md/
+├── module/
+│ ├── item/
+│ │ ├── jittoController.py/
+│ │ ├── jittoLogic.py/
+│ │ ├── jittoRouter.py/
+
+```
 
 ## Utilities
 
