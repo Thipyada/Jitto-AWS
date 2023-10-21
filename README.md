@@ -8,7 +8,7 @@ In this project, you will develop a RESTful web API using AWS that allows users 
 
 ## Project Structure
 
-JITTO-AWS/
+JITTO-AWS
 ├── README.md
 ├── module
 │ ├── item
