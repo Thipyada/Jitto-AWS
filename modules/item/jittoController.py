@@ -35,8 +35,14 @@ def getById(id):
 
 def create(requestBody):
     try:
+        requiredFields = ['name', 'description']
+        missingFields = [ field for field in requiredFields if field not in requestBody ]
+
+        if len(missingFields) > 0:
+            return buildResponse(404, {'Message': 'Missing fields: {}'.format(', '.join(missingFields))})
+        
         requestBody['itemId'] = generateId()
-        requestBody['creationDate'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        requestBody['createdAt'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         table.put_item(Item=requestBody)
         body = {
             'Message': 'Item created',
