@@ -63,18 +63,19 @@ The RESTful API is implemented using the following files:
 
 ### API Gateway
 
-```
 - a RESTful API is created with the following configurations:
   - Protocol: `REST`
   - Endpoint Type: `Regional`
   - API name: `Jitto`
+  ```
   - Resources:
     - /items
       - GET - Integration type: `Lambda Function Proxy` - Lambda function: `jitto-api`
       - POST - Integration type: `Lambda Function Proxy` - Lambda function: `jitto-api`
     - /items/{id}
       - GET - Integration type: `Lambda Function Proxy` - Lambda function: `jitto-api`
-```
+  ```
+  - Stages: `test`
 
 ### API Gateway API key-based authentication and usage plans
 
@@ -83,27 +84,31 @@ The RESTful API is implemented using the following files:
 - Create an API key and associate it with the usage plan.
 
 ```
+
 Usage Plan: Admin
-  - Throttling: 100 requests per second
-  - Burst: 500 requests
-  - Quota: 10000 requests per day
-  - API Stage: test (default stage)
-Usage Plan: User
-  - Throttling: 10 requests per second
-  - Burst: 100 requests
-  - Quota: 1000 requests per day
-  - API Stage: test (default stage)
+
+- Throttling: 100 requests per second
+- Burst: 500 requests
+- Quota: 10000 requests per day
+- API Stage: test (default stage)
+  Usage Plan: User
+- Throttling: 10 requests per second
+- Burst: 100 requests
+- Quota: 1000 requests per day
+- API Stage: test (default stage)
 
 API Key: Jitto-Admin
-  - API Key Name: Jitto_Admin
-  - API Key Value: WmJNPDT9e99Ut05ulQnrG6GuIgElPP0s7SD2J72C
-  - Enabled: true
-  - Usage Plan: Admin
-API Key: Jitto_User
-  - API Key Name: Jitto_User
-  - API Key Value: pFVkC9ALU19q0MhUNTAEU16fzNRQZZRX2GrBhm0U
-  - Enabled: true
-  - Usage Plan: User
+
+- API Key Name: Jitto_Admin
+- API Key Value: WmJNPDT9e99Ut05ulQnrG6GuIgElPP0s7SD2J72C
+- Enabled: true
+- Usage Plan: Admin
+  API Key: Jitto_User
+- API Key Name: Jitto_User
+- API Key Value: pFVkC9ALU19q0MhUNTAEU16fzNRQZZRX2GrBhm0U
+- Enabled: true
+- Usage Plan: User
+
 ```
 
 ### CloudWatch
@@ -151,10 +156,12 @@ https://xyr4zso0ma.execute-api.ca-central-1.amazonaws.com/test/items/{id}
 body: raw - JSON
 
 ```
+
 {
-  "name": "string",
-  "description": "string"
+"name": "string",
+"description": "string"
 }
+
 ```
 
 - itemId is generated automatically by the Lambda function.
@@ -167,12 +174,14 @@ url: https://xyr4zso0ma.execute-api.ca-central-1.amazonaws.com/test/items/1
 output:
 
 ```
+
 {
-  "id": "1",
-  "name": "string",
-  "description": "string",
-  "createdAt": "string"
+"id": "1",
+"name": "string",
+"description": "string",
+"createdAt": "string"
 }
+
 ```
 
 ## Utilities
@@ -184,3 +193,7 @@ output:
 - [API Gateway](https://aws.amazon.com/api-gateway/) - API Management
 - [CloudWatch](https://aws.amazon.com/cloudwatch/) - Monitoring and Observability
 - [Python](https://www.python.org/) - Programming Language
+
+```
+
+```
