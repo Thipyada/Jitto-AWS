@@ -1,7 +1,6 @@
 import json
 import random
 import string
-from decimal import Decimal
 
 def buildResponse(statusCode, body=None):
     response = {
