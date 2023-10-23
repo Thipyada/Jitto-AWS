@@ -6,7 +6,7 @@ dynamodbTableName = 'items-collection'
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table(dynamodbTableName)
 
-def getAll(queryStringParameters=None):
+def getAll():
     try:
         response = table.scan()
         if len(response) == 0:

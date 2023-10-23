@@ -48,7 +48,7 @@ The RESTful API is implemented using the following files:
 
 ### Roles
 
-- named `jitto_aws_function`
+- named `jitto-role`
 - a role is created with the following policies:
   - `AmazonDynamoDBFullAccess`
   - `CloudWatchLogsFullAccess`
@@ -91,7 +91,9 @@ Usage Plan: Admin
 - Burst: 500 requests
 - Quota: 10000 requests per day
 - API Stage: test (default stage)
-  Usage Plan: User
+
+Usage Plan: User
+
 - Throttling: 10 requests per second
 - Burst: 100 requests
 - Quota: 1000 requests per day
@@ -103,7 +105,9 @@ API Key: Jitto-Admin
 - API Key Value: WmJNPDT9e99Ut05ulQnrG6GuIgElPP0s7SD2J72C
 - Enabled: true
 - Usage Plan: Admin
-  API Key: Jitto_User
+
+API Key: Jitto_User
+
 - API Key Name: Jitto_User
 - API Key Value: pFVkC9ALU19q0MhUNTAEU16fzNRQZZRX2GrBhm0U
 - Enabled: true
